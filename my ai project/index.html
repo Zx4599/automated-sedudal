@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Python Application</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        h2, h3 {
+            text-align: center;
+            color: #0000ff; /* blue color */
+        }
+        table {
+            margin: 0 auto; /* Center the table */
+            border-collapse: collapse; /* Remove the cell spacing */
+            width: 90%; /* Set the table width */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #96DFD8;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>الفصل الأول 2022/2023 </h1>
+    <h2>Department of Electrical and Computer Engineering - دائرة الهندسة الكهربائية وهندسة الحاسوب</h2>
+    <h3 style="color:red;"> دائرة الهندسة الكهربائية وهندسة الحاسوب</h3>
+
+    <table>
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Instructor</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Room</th>
+        </tr>
+        {% for output in outputs %}
+            <tr>
+                <td>{{ output[0].split(" - ")[0] }}</td>
+                <td>{{ output[0].split(" - ")[1] }}</td>
+                <td>{{ output[0].split(" - ")[2] }}</td>
+                <td>{{ output[1] }}</td>
+                <td>{{ output[2] }}</td>
+                <td>{{ output[3] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
